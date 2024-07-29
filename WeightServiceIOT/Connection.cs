@@ -25,7 +25,7 @@ namespace WeightServiceIOT
         /// <exception cref="ArgumentOutOfRangeException">One or more of the properties are invalid.</exception>
         /// <exception cref="ArgumentException">Port name is invalid</exception>
         /// <exception cref="IOException">Port in invalid state.</exception>
-        public Connection(string _port, int _baudRate = 9600)
+        public Connection(string _port, int _baudRate = 9600, int _readTimeout = 500)
         {
             portName = _port;
             baudRate = _baudRate;
@@ -37,6 +37,7 @@ namespace WeightServiceIOT
 
             serialPort.Parity = Parity.None;
             serialPort.StopBits = StopBits.One;
+            serialPort.ReadTimeout = _readTimeout;
         }
 
         ///
