@@ -67,8 +67,8 @@ To use the WeightServiceIOT service, follow these steps:
 ### Creating a Connection
 This can be used for granular control over connections, However it is suggested to use The ConnectionManager to manage multiple connections.
 ```csharp
-// Create a new connection, using its Portname and baudrate.
-var connection = new Connection("/dev/ttyUSB0", 9600);
+// Create a new connection, using its Portname, baudrate and connection timeout (optional).
+var connection = new Connection("/dev/ttyUSB0", 9600, 500);
 // open the serial port connection.
 connection.OpenConnection();
 // and start reading from it.
